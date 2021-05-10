@@ -1,0 +1,15 @@
+---
+
+    - name: bugzilla | database | create a database for bugzilla
+      mysql_db:
+        name: "{{ db_name }}"
+        state: present
+      when: db_driver == "Mysql"
+
+    - name: bugzilla | database | create a user for bugzilla
+      mysql_user:
+        name: "{{ db_user }}"
+        password: "{{ db_pass }}"
+        priv: "{{ db_name }}.*:ALL"
+        state: present
+      when: db_driver == "Mysql"

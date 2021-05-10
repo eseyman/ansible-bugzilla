@@ -1,0 +1,13 @@
+---
+
+- name: bugzilla | apache | service
+  service:
+    name: "{{ apache_service }}"
+    state: started
+    enabled: yes
+
+- name: bugzilla | apache | configuration
+  copy:
+    src: files/bugzilla_httpd.conf
+    dest: /etc/httpd/conf.d/bugzilla.conf
+    mode: '0644'

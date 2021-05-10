@@ -1,0 +1,24 @@
+packages:
+  - git
+  - httpd
+  - perl(CGI)
+  - perl(DBI)
+  - perl(Date::Format)
+  - perl(DateTime)
+  - perl(DateTime::TimeZone)
+  - perl(Digest::SHA)
+  - perl(Email::MIME)
+  - perl(Email::Sender)
+  - perl(ExtUtils::MM)
+  - perl(JSON::XS)
+  - perl(List::MoreUtils)
+  - perl(Math::Random::ISAAC)
+  - perl(Memoize)
+  - perl(Template)
+  - perl(autodie)
+
+dbclient_packages:
+  mysql: perl(DBD::mysql)
+  pg: perl(DBD::Pg)
+
+apache_service: httpd

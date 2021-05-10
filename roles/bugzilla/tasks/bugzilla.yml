@@ -1,0 +1,19 @@
+---
+
+    # XXX: Depending on what version of MySQL we're using, we may want Bugzilla 5.0.4
+    # In all other cases, we want version 5.0.6
+    - name: Git checkout of Bugzilla
+      git:
+        repo: 'https://github.com/bugzilla/bugzilla.git'
+        dest: /opt/
+        version: release-5.0.6
+
+    - name: Create an answer file for localconfig
+      template:
+        src: answer.j2
+        dest: /opt/answer
+
+    - name: Run checksetup.pl to create localconfig
+      command: ./checksetup.pl answer
+      args:
+        chdir: /opt/

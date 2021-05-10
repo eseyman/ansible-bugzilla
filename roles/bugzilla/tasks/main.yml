@@ -1,0 +1,15 @@
+- name: bugzilla | main | {{ ansible_facts['os_family'] }} vars
+  include_vars: "{{ ansible_facts['os_family']|lower }}.yml"
+
+- name: bugzilla | main | install needed packages
+  include: packages.yml
+
+- name: bugzilla | main | configure apache
+  include: apache.yml
+
+- name: bugzilla | main | configure database
+  include: database.yml
+
+- name: bugzilla | main | configure bugzilla
+  include: bugzilla.yml
+

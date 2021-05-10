@@ -1,0 +1,11 @@
+---
+
+- hosts: bugzilla
+  become: yes
+  vars:
+    - admin_email:
+    - admin_password:
+    - admin_realname:
+    - urlbase:
+  roles:
+    - bugzilla

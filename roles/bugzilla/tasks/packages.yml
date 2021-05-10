@@ -1,0 +1,7 @@
+- name: Install Apache HTTPD, git and most needed Perl modules
+  yum:
+    name: "{{ packages }}"
+
+- name: Install the database client module
+  yum:
+    name: "{{ dbclient_packages[db_driver|lower] }}"
